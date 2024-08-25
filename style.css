@@ -8,10 +8,50 @@
 
 .sidebar {
     grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 .header {
     grid-area: header;
+    display: grid;
+}
+
+.upperHeader,
+.lowerHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.lowerHeader {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.search {
+    justify-self: stretch;
+    align-self: center;
+}
+
+.profile {
+    justify-self: end;
+}
+
+.welcome {
+    display: grid;
+    grid-template-rows: min-content min-content;
+}
+
+.welcome > p,
+.welcome > h1 {
+    margin: 0;
+}
+
+.headerButtons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
 }
 
 .content {
