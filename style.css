@@ -10,11 +10,13 @@
     grid-area: sidebar;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    background-color: #e11d48;
 }
 
 .header {
     grid-area: header;
     display: grid;
+    background-color: #fff1f2;
 }
 
 .upperHeader,
@@ -56,4 +58,17 @@
 
 .content {
     grid-area: content;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-color: #fda4af;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.rightContent {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
 }
