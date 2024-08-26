@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 
 .container {
@@ -56,11 +57,30 @@ body {
 
 .header {
     grid-area: header;
-    display: grid;
     background-color: #fff1f2;
 }
 
-.upperHeader,
+.upperHeader {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    img[src$=".svg"] {
+        width: 2em;
+    }
+    input {
+        background-color: lightgray;
+        border: none;
+        border-radius: 15px;
+        height: 2em;
+    }
+}
+
+.searchArea {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
+    justify-items: center;
+}
+
 .lowerHeader {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -78,6 +98,17 @@ body {
 
 .profile {
     justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    justify-items: center;
+    align-items: center;
+    text-wrap: nowrap;
+    gap: 2em;
+    padding-right: 4em;
+    img {
+        width: 4em;
+        border-radius: 50%;
+    }
 }
 
 .welcome {
