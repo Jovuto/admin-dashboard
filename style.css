@@ -10,6 +10,7 @@ body {
     grid-template-areas: 
     "sidebar header"
     "sidebar content";
+    height: 100vh;
 }
 
 .sidebar {
@@ -90,13 +91,10 @@ body {
 }
 
 .lowerHeader {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.lowerHeader {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .search {
@@ -127,14 +125,36 @@ body {
     border-radius: 50%;
 }
 
+.lowerHeader img {
+        width: 6em;
+        border-radius: 50%;
+        padding: 1em;
+        display: inline-block;
+}
+
 .welcome {
     display: grid;
-    grid-template-rows: min-content min-content;
+    grid-template-areas: 
+    "picture smallText"
+    "picture bigText";
+}
+
+.welcome img {
+    grid-area: picture;
 }
 
 .welcome > p,
 .welcome > h1 {
     margin: 0;
+}
+
+.welcome p {
+    grid-area: smallText;
+    align-self: end;
+}
+
+.welcome h1 {
+    grid-area: bigText;
 }
 
 .headerButtons {
