@@ -10,7 +10,6 @@ body {
     grid-template-areas: 
     "sidebar header"
     "sidebar content";
-    height: 100vh;
 }
 
 .sidebar {
@@ -30,16 +29,17 @@ body {
     gap: 20px;
     padding-bottom: 20px;
     list-style: none;
-    li {
-        display: grid;
-        grid-template-columns: repeat(2, min-content);
-        align-items: center;
-        gap: 5px;
-    }
-    img {
-        width: 1em;
-        filter: invert(100%) sepia(0%) saturate(18%) hue-rotate(39deg) brightness(107%) contrast(104%);
-    }
+}
+
+.sidebar ul li {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    align-items: center;
+    gap: 5px;
+}
+.sidebar ul img {
+    width: 1em;
+    filter: invert(100%) sepia(0%) saturate(18%) hue-rotate(39deg) brightness(107%) contrast(104%);
 }
 
 .logo {
@@ -61,24 +61,32 @@ body {
 }
 
 .upperHeader {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    img[src$=".svg"] {
-        width: 2em;
-    }
-    input {
-        background-color: lightgray;
-        border: none;
-        border-radius: 15px;
-        height: 2em;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.upperHeader img[src$=".svg"] {
+    width: 2em;
+}
+
+.upperHeader input {
+    background-color: lightgray;
+    border: none;
+    border-radius: 15px;
+    height: 2em;
+    width: 30vw;
 }
 
 .searchArea {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    align-items: center;
-    justify-items: center;
+    align-self: center;
+}
+
+.upperHeader .searchArea img[src$=".svg"] {
+    width: 2em;
+    justify-self: center;
 }
 
 .lowerHeader {
@@ -92,23 +100,31 @@ body {
 }
 
 .search {
-    justify-self: stretch;
+    justify-self: center;
     align-self: center;
 }
 
 .profile {
-    justify-self: end;
     display: grid;
     grid-template-columns: repeat(3, min-content);
-    justify-items: center;
-    align-items: center;
     text-wrap: nowrap;
     gap: 2em;
     padding-right: 4em;
-    img {
-        width: 4em;
-        border-radius: 50%;
+    align-items: center;
+}
+
+@media (max-width: 1028px) {
+    .upperHeader {
+        justify-content: center;
     }
+    .profile {
+        padding-right: 0em;
+    }
+  }
+
+.profile img {
+    width: 4em;
+    border-radius: 50%;
 }
 
 .welcome {
