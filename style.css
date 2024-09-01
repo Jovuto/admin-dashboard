@@ -118,7 +118,13 @@ body {
     .profile {
         padding-right: 0em;
     }
-  }
+}
+
+@media (max-width: 1195px) {
+      .lowerHeader {
+        justify-content: center;
+    }
+}
 
 .profile img {
     width: 4em;
@@ -137,6 +143,7 @@ body {
     grid-template-areas: 
     "picture smallText"
     "picture bigText";
+    margin-left: 3em;
 }
 
 .welcome img {
@@ -162,6 +169,16 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     align-items: center;
+    margin-right: 3em;
+}
+
+button {
+    background-color: #e11d48;
+    border-radius: 3em;
+    width: 7em;
+    border: none;
+    color: white;
+    height: 3em;
 }
 
 .content {
