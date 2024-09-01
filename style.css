@@ -67,7 +67,8 @@ body {
     justify-content: space-between;
 }
 
-.upperHeader img[src$=".svg"] {
+.upperHeader img[src$=".svg"],
+.card img[src$=".svg"] {
     width: 2em;
 }
 
@@ -123,6 +124,7 @@ body {
 @media (max-width: 1195px) {
       .lowerHeader {
         justify-content: center;
+        margin-bottom: 2em;
     }
 }
 
@@ -186,11 +188,46 @@ button {
     display: grid;
     grid-template-columns: 3fr 1fr;
     background-color: #fda4af;
+    padding: 2em;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    margin: 1em;
+}
+
+.card {
+    background-color: white;
+    border-radius: 1em;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.cardContent {
+    margin: 2em;
+    display: grid;
+    justify-content: space-between;
+}
+
+.cardContent p {
+    font-size: 0.75em;
+}
+
+.cardButtons {
+    display: flex;
+    justify-content: end;
+    margin-top: auto;
+    gap: 1em;
+}
+
+.cardAccent {
+    height: 100%;
+    width: 1em;
+    background-color: green;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
 }
 
 .rightContent {
